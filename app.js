@@ -14,7 +14,9 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(express.static("public"));
 
-mongoose.connect("mongodb+srv://Pivato:test123@cluster0-db9kj.mongodb.net/todolistDB", {
+const db_url = process.env.DB_URL;
+
+mongoose.connect(db_url, {
   useNewUrlParser: true
 });
 
